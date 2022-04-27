@@ -1,0 +1,283 @@
+/*Легкий нормалайз контейнера*/
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+@media(max-width:1240px){
+    .container{
+        width: 1024px;
+    }
+}
+@media(max-width:1024px){
+    .container{
+        width: 768px;
+    }
+}
+@media(max-width:768px){
+    .container{
+        width: 100%;
+    }
+}
+
+/*Scrollbar*/
+.game__chat-text::-webkit-scrollbar {
+    width: 8px;               /* ширина scrollbar */
+}
+.game__chat-text::-webkit-scrollbar-track {
+    background: unset;        /* цвет дорожки */
+}
+.game__chat-text::-webkit-scrollbar-thumb {
+    background-color: #b9d52b;
+    border-radius: 62px;
+}
+
+/*Игровое поле*/
+.display_none{
+    display: none;
+}
+.game__top,.game__bottom{display: flex;justify-content: space-between;}
+.game__buisness{
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.game__buisness_action-text{
+    font-size: 33px;
+    font-weight: 700;
+    -webkit-transform: rotate(-90deg); /*Chrome, Safari*/
+    -moz-transform: rotate(-90deg); /*Firefox*/
+    -o-transform: rotate(-90deg); /*Opera*/
+    -ms-transform: rotate(-90deg); /*IE*/
+    transform: rotate(-90deg); /*браузеры без префексов*/
+}
+.game__left-right .game__buisness_action-text{
+    -webkit-transform: unset; /*Chrome, Safari*/
+    -moz-transform: unset; /*Firefox*/
+    -o-transform: unset; /*Opera*/
+    -ms-transform: unset; /*IE*/
+    transform: unset; /*браузеры без префексов*/
+}
+.game__buisness_block, .game__buisness_action{
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin: 0px 5px 0 0;
+}
+.game__buisness_block:last-child{
+    margin: 0 0 0 5px;
+}
+.game__buisness_action{
+    display: flex;
+    align-items: center;
+    margin: 0 3px;
+}
+.game__left-right{
+    display: flex;
+    justify-content: space-between;
+}
+/*Стили блоков*/
+/*Размеры блоков*/
+.game__buisness{width: 100px;height: 185px;display: flex;justify-content: center;align-items: center;    margin: 0 3px;
+}
+.game__buisness, .game__buisness_action{
+    z-index: -1;
+    max-width: 100px;
+    min-width: 30px;
+    width: 7%;
+}
+
+.game__left-right .game__buisness{height: 85px;width: 220px;}
+
+.game__left-right .game__buisness img{height: 80%;width: unset;}
+.game__left-right .game__buisness_action,.game__buisness_block{width: 220px;height: 85px;}
+.game__left-right .game__buisness{margin: 5px 0;}
+
+.game__right .game__buisness_action, .game__right .game__buisness{
+    margin-right: 0;
+    margin-left: 4px;
+}
+
+/*Блоки выравниваются относительно главной четверки*/
+.game__left .game__buisness_action, .game__left .game__buisness, .game__right .game__buisness_action, .game__right .game__buisness{
+    margin-left: 0px;
+    max-width: 97%;
+}
+.game__right .game__buisness_action, .game__right .game__buisness{
+    margin-left: 4px;
+}
+.game__left, .game__right{width: 15%;}
+.game__buisness img{width: 80%;}
+.game__buisness_block{width: 220px;display: flex;justify-content: center;align-items: center;
+    height: 185px;
+    max-width: 220px;
+    min-width: 30px;
+    width: 15.5%;
+}
+.game__buisness_block img{width: 55%;}
+/*Блоки людей*/
+.game__persones{    
+    margin: 20px 0 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.game__persone_img img{
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.game__persone_crypto{display: flex;align-items: center;}
+.game__persone_crypto img{width: 45px;margin: 0 10px;}
+.game__persone{
+    display: flex;
+    align-items: center;
+    justify-content: normal;
+    width: min-content;
+    align-items: flex-start;
+}
+.game__personage{
+    position: absolute;
+    left: 230px;
+    transition: 1s all;
+} 
+.game__personage img{
+    width: 70px;
+}
+.game__persone_img{margin-right: 20px;}
+.game__persone_text{    font-size: 27px;}
+/*Чат*/
+.game__chat{width: inherit;margin: 20px 10px;}
+.game__chat-text{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 90%;
+    max-height: 420px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+@media(max-width:1400px){
+    .game__chat-text{
+        max-height: 240px;
+    }
+}
+.game__chat-block{
+    display: flex;
+    flex-direction: column;
+}
+.game__chat-input{
+    width: calc(100% - 50px);
+    height: 7%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 25px;
+    font-size: 25px;
+}
+.game__center{
+    height: 90%;
+    display: flex;
+    width: 75%;
+    justify-content: space-around;
+    padding: 10px;
+}
+@media(min-width:2000px){
+    .container {width: 60%;}
+    .game__left-right .game__buisness, .game__left-right .game__buisness_action {
+    height: 100px;
+    }
+    .game__right .game__buisness_action, .game__right .game__buisness {
+        margin-left: 8px;
+    }
+}
+@media(max-width:2000px){
+    .game__persone_img img {
+        width: 105px;
+        height: 105px;
+    }
+    .game__persone_text {
+        font-size: 22px;
+    }
+}
+@media(max-width:1920px){
+    .game__buisness_action-text {
+        font-size: 25px;
+    }
+}
+@media(max-width:1600px){
+    /*Размеры блоков на карте*/
+    .game__top .game__buisness_block, .game__top .game__buisness,.game__bottom .game__buisness_block, .game__bottom .game__buisness{
+        height: 140px;
+    }
+    .game__left .game__buisness_action, .game__left .game__buisness, .game__right .game__buisness_action, .game__right .game__buisness {
+        height: 85px;
+    }
+    .game__persone_img img {
+        width: 120px;
+        height: 120px;
+    }
+    .game__persone_text {
+        font-size: 21px;
+    }
+    /*Размеры блоков на карте END*/
+}
+@media(max-width:1400px){
+    .container {
+        width: 60%;
+        margin: 0 auto;
+    }
+    /*Размеры блоков на карте*/
+    
+    .game__top .game__buisness_block, .game__top .game__buisness,.game__bottom .game__buisness_block, .game__bottom .game__buisness{
+        height: 120px;
+    }
+    .game__left .game__buisness_action, .game__left .game__buisness, .game__right .game__buisness_action, .game__right .game__buisness {
+        height: 53px;
+    }
+    .game__persone_img img {
+        width: 50px;
+        height: 50px;
+    }
+    .game__persone_text {
+        font-size: 14px;
+    }
+    .game__persone_crypto img {
+        width: 25px;
+    }
+    .game__left .game__buisness {
+        margin: 4px 8px 4px 0;
+    }
+    .game__right .game__buisness, .game__right .game__buisness_action {
+        margin: 4px 0 4px 8px;
+    }
+    .game__buisness_action-text {
+        font-size: 20px;
+    }
+    /*Размеры блоков на карте END*/
+    .game__left .game__buisness_action, .game__left .game__buisness, .game__right .game__buisness_action, .game__right .game__buisness{
+        max-width: 92%;
+    }
+}
+@media(max-width: 1200px){
+    .game__right .game__buisness, .game__right .game__buisness_action {
+        margin: 4px 0 4px 4px;
+    }
+    .game__left, .game__right {
+        width: 14%;
+    }
+}
+@media(max-width: 1080px){
+    .game{
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
